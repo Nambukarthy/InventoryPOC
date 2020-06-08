@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InventoryMobileApp.Views.ToolBarView">
+    <ContentView.Content>
+        <Grid BackgroundColor="#1B4085">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <StackLayout Orientation="Horizontal" Grid.Column="0">
+                <Button Text="Products" Image="notes.png" Command="{Binding ProductCommand}"/>
+                <Button Text="Users" Image="helpicon.png" Command="{Binding UserCommand}"/>
+                <Button Text="Racks" Image="notes.png" Command="{Binding RackCommand}"/>
+                <Button Text="Designation" Image="helpicon.png" Command="{Binding DesignationCommand}"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Grid.Column="2" Margin="0">
+                <Button Text="Sync" Image="syncicon.png" Command="{Binding SyncCommand}"/>
+                <Button Text="Logout" Image="logouticon.png" Command="{Binding LogoutCommand}"/>
+            </StackLayout>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

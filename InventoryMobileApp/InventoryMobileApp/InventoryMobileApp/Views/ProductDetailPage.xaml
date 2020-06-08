@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:CommonToolBarPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:InventoryMobileApp.Views"
+             xmlns:viewmodels ="clr-namespace:InventoryMobileApp.ViewModels;assembly=InventoryMobileApp"
+             x:Class="InventoryMobileApp.Views.ProductDetailPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:ProductDetailViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <Grid Margin="0,5,5,5" x:Name="contentGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ScrollView Grid.Row="1" Margin="5,0,0,0" Padding="5,3,3,5">
+                <Grid RowSpacing="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="0.6*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="ProductId" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Row="1" Text="ProductName" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Row="2" Text="SKU" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Row="3" Text="UPC" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Row="4" Text="IsSKULabled" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Row="5" Text="IsDamaged" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Row="6" Text="IsSold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Row="7" Text="RackId" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Row="8" Text="IsShelved" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Row="9" Text="CreatedBy" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Row="10" Text="ShelvedBy" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                    <Entry Grid.Column="1" Text="{Binding ProductItem.ProductId}" IsEnabled="False" FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" Grid.Row="1" Text="{Binding ProductItem.ProductName, Mode=TwoWay}" FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" Grid.Row="2" Text="{Binding ProductItem.SKU, Mode=TwoWay}"  FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" Grid.Row="3" Text="{Binding ProductItem.UPC, Mode=TwoWay}" FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" Grid.Row="4" Text="{Binding ProductItem.IsSKULabled, Mode=TwoWay}" FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" Grid.Row="5" Text="{Binding ProductItem.IsDamaged, Mode=TwoWay}" FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" Grid.Row="6" Text="{Binding ProductItem.IsSold, Mode=TwoWay}" FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" Grid.Row="7" Text="{Binding ProductItem.RackId, Mode=TwoWay}" FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" Grid.Row="8" Text="{Binding ProductItem.IsShelved, Mode=TwoWay}" FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" Grid.Row="9" Text="{Binding ProductItem.CreateBy, Mode=TwoWay}" FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" Grid.Row="10" Text="{Binding ProductItem.ShelvedBy, Mode=TwoWay}" FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </Grid>
+            </ScrollView>
+  
+            <Grid Grid.Row="2" Margin="5,0,0,0" Padding="5,5,5,15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Save" Command="{Binding ProductSaveCommand}" CommandParameter="{Binding}" FontSize="Medium" HeightRequest="50" HorizontalOptions="EndAndExpand"/>
+                <Button Grid.Column="1" FontSize="Medium" Text="Cancel" Command="{Binding ProductCancelCommand}" CommandParameter="{Binding}" HeightRequest="50" HorizontalOptions="StartAndExpand"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</views:CommonToolBarPage>

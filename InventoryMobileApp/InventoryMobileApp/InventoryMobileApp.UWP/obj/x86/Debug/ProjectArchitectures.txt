@@ -1,0 +1,1 @@
+C:\Users\nambu\source\repos\InventoryMobileApp\InventoryMobileApp\InventoryMobileApp.UWP\InventoryMobileApp.UWP.csproj;x86

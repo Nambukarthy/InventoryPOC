@@ -1,0 +1,6 @@
+C:\Users\nambu\source\repos\InventoryWebAPI\InventoryDataAccess\bin\Release\InventoryDataAccess.dll
+C:\Users\nambu\source\repos\InventoryWebAPI\InventoryDataAccess\bin\Release\InventoryDataAccess.pdb
+C:\Users\nambu\source\repos\InventoryWebAPI\InventoryDataAccess\obj\Release\InventoryDataAccess.csprojAssemblyReference.cache
+C:\Users\nambu\source\repos\InventoryWebAPI\InventoryDataAccess\obj\Release\InventoryDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\nambu\source\repos\InventoryWebAPI\InventoryDataAccess\obj\Release\InventoryDataAccess.dll
+C:\Users\nambu\source\repos\InventoryWebAPI\InventoryDataAccess\obj\Release\InventoryDataAccess.pdb

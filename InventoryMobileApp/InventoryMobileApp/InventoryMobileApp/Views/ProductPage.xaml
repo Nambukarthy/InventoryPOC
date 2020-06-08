@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:CommonToolBarPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:InventoryMobileApp.Views"
+             xmlns:viewmodels ="clr-namespace:InventoryMobileApp.ViewModels;assembly=InventoryMobileApp"
+             xmlns:behaviors ="clr-namespace:InventoryMobileApp.Views.Behaviours"
+             x:Class="InventoryMobileApp.Views.ProductPage">
+
+
+    <ContentPage.BindingContext>
+        <viewmodels:ProductViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid x:Name="contentGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1">
+
+                <ListView x:Name="lstProducts" ItemsSource="{Binding ProductList, Mode=TwoWay}">
+
+                    <ListView.Behaviors>
+                        <behaviors:ProductItemTappedBehaviour/>
+                    </ListView.Behaviors>
+                    
+                    <ListView.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                              
+                            </Grid.ColumnDefinitions>
+                            <Label Text="ID"  FontAttributes="Bold"/>
+                            <Label Text="Name" Grid.Column="1" FontAttributes="Bold"/>
+                            <Label Text="SKU"  Grid.Column="2"  FontAttributes="Bold"/>
+                            <Label Text="UPC"  Grid.Column="3"  FontAttributes="Bold"/>
+                            
+                        </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                           
+                                        </Grid.ColumnDefinitions>                               
+                                <Label Text="{Binding ProductId}" Grid.Column="0" ></Label>
+                                        <Label Text="{Binding ProductName}" Grid.Column="1"></Label>
+                                        <Label Text="{Binding SKU}" Grid.Column="2" ></Label>
+                                        <Label Text="{Binding UPC}" Grid.Column="3" ></Label>
+                                       
+                                    </Grid>                       
+                                </ViewCell.View>
+                            </ViewCell>
+                              
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</views:CommonToolBarPage>

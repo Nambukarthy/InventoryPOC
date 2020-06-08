@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InventoryMobileApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primaryColor">#1B4085</Color>
+            <Color x:Key="whiteTextColor">White</Color>
+            <Color x:Key="pageBackgroundColor">White</Color>
+            <Color x:Key="errorTextColor">#c90739</Color>
+            <Color x:Key="greyBorderColor">#E4E4E4</Color>
+            <Color x:Key="listViewSeparatorColor">#605a5a</Color>
+            <Color x:Key="statusToDoColor">#F06700</Color>
+            <Color x:Key="statusInProgressColor">#50558F</Color>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource primaryColor}"/>
+                <Setter Property="TextColor" Value="{StaticResource whiteTextColor}"/>
+                <Setter Property="BorderRadius" Value="0"/>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

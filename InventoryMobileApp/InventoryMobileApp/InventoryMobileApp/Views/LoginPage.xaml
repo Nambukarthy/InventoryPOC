@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InventoryMobileApp.Views.LoginPage"
+             xmlns:viewmodels ="clr-namespace:InventoryMobileApp.ViewModels;assembly=InventoryMobileApp"
+             BackgroundColor="{StaticResource pageBackgroundColor}">
+
+    <ContentPage.BindingContext>
+        <viewmodels:LoginViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="2.5*"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Source ="Eurofins_Logo.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Grid.Row="1" x:Name="Heading" Text="Welcome to ABB Inventory" TextColor="{StaticResource primaryColor}" FontSize="20"   HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand"/>
+
+            <StackLayout Grid.Row="2" Margin="10,5,10,5">
+                <Label Text="Username" FontSize="Small" TextColor="{StaticResource primaryColor}"/>
+                <Entry Text="{Binding UserName, Mode=TwoWay}"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3" Margin="10,5,10,2">
+                <Label Text="Password" FontSize="Small" TextColor="{StaticResource primaryColor}"/>
+                <Entry Text="{Binding Password, Mode=TwoWay}" IsPassword="True"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="4" Margin="10,5,10,2">
+                <Button x:Name="LoginBtn" Text="Login" Command="{Binding LoginCommand}" CommandParameter="{Binding}" FontSize="Large" HorizontalOptions="FillAndExpand"/>
+                <Label Text="Forgot Password?" FontSize="Small" HorizontalOptions="CenterAndExpand" TextColor="{StaticResource primaryColor}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ForgetPasswordCommand}" CommandParameter="{Binding}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+            <StackLayout Grid.Row="5" Margin="10,5,10,2">
+                <Label Text="{Binding ErrorMessage}"  FontSize="16"  TextColor="{StaticResource errorTextColor}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:CommonToolBarPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:InventoryMobileApp.Views"
+             xmlns:viewmodels ="clr-namespace:InventoryMobileApp.ViewModels;assembly=InventoryMobileApp"
+             x:Class="InventoryMobileApp.Views.RackDetailPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:RackDetailViewModel/>
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+        <Grid Margin="0,5,5,5" x:Name="contentGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ScrollView Grid.Row="1" Margin="5,0,0,0" Padding="5,3,3,5">
+                <Grid RowSpacing="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="0.6*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="RackId" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Row="1" Text="RackName" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Row="2" Text="RackCapacity" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Row="3" Text="ShelvedItems" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Row="4" Text="CreatedBy" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Row="5" Text="RackOwner" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    
+                    <Entry Grid.Column="1" Text="{Binding RackItem.RackId}" IsEnabled="False" FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" Grid.Row="1" Text="{Binding RackItem.RackName, Mode=TwoWay}" FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" Grid.Row="2" Text="{Binding RackItem.RackCapacity, Mode=TwoWay}"  FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" Grid.Row="3" Text="{Binding RackItem.ShelvedItems, Mode=TwoWay}" FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" Grid.Row="4" Text="{Binding RackItem.CreateBy, Mode=TwoWay}" FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" Grid.Row="5" Text="{Binding RackItem.RackOwner, Mode=TwoWay}" FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </Grid>
+            </ScrollView>
+
+            <Grid Grid.Row="2" Margin="5,0,0,0" Padding="5,5,5,15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Save" Command="{Binding RackSaveCommand}" CommandParameter="{Binding}" FontSize="Medium" HeightRequest="50" HorizontalOptions="EndAndExpand"/>
+                <Button Grid.Column="1" FontSize="Medium" Text="Cancel" Command="{Binding RackCancelCommand}" CommandParameter="{Binding}" HeightRequest="50" HorizontalOptions="StartAndExpand"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</views:CommonToolBarPage>
